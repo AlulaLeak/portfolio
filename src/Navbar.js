@@ -11,7 +11,7 @@ export default function Navbar() {
       <CNavbar expand="lg" colorScheme="light" className="bg-light">
         <CContainer fluid>
           <CNavbarBrand className="font-fam" href="#">
-            Alula Leak: Software Dev
+            My Port (Fo-lo) Land
           </CNavbarBrand>
           <CNavbarToggler aria-label="Toggle navigation" aria-expanded={visible} onClick={() => setVisible(!visible)} />
           <CCollapse className="navbar-collapse" visible={visible}>
