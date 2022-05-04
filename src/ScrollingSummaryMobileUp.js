@@ -1,9 +1,10 @@
 import { Suspense, useRef } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
-import { Preload, ScrollControls, Scroll, useScroll, Image } from '@react-three/drei'
+import { useLoader, useThree, planeBufferGeometry } from '@react-three/fiber'
+import { Circle, Preload, ScrollControls, Scroll } from '@react-three/drei'
 import SpheresMobile from './SpheresMobile'
 import Jumbo from './Jumbo'
-import VideoTextMobile from './VideoTextMobile'
+import * as THREE from 'three'
+import faceImg from './profile.jpeg'
 
 function ImagesMobile() {
   const group = useRef()
@@ -24,13 +25,18 @@ function Words() {
 
 export default function ScrollingSummaryMobileUp() {
   const { width } = useThree((state) => state.viewport)
+  const texture = useLoader(THREE.TextureLoader, faceImg)
 
   return (
     <mesh>
       <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
         <Scroll>
-          <VideoTextMobile positionPass={[-0.25, 0, 7]} />
           <ImagesMobile />
+          <mesh>
+            {/* <Circle position={[0, 0, 6]} /> */}
+            <planeBufferGeometry attach="geometry" args={[4, 4]} />
+            <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+          </mesh>
         </Scroll>
         <Scroll>
           <mesh position={[-0.5, 0, 0]}>
