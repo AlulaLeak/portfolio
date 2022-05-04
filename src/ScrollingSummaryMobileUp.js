@@ -33,7 +33,7 @@ export default function ScrollingSummaryMobileUp() {
           <ImagesMobile />
         </Scroll>
         <Scroll>
-          <mesh position={[-0.3, 0, 0]}>
+          <mesh position={[-0.5, 0, 0]}>
             <Jumbo position={[-1.1, 4.1, 10]} word={'ALULA'} shake={0.01} fontScale={28} />
             <Jumbo position={[-1.1, 3.85, 10]} word={'LEAKEMARIAM'} shake={0.01} fontScale={28} />
             <Jumbo position={[-1.1, 3.55, 10]} word={'SOFTWARE'} shake={0.01} fontScale={53} />
