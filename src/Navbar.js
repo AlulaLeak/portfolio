@@ -17,7 +17,7 @@ export default function Navbar() {
           <CCollapse className="navbar-collapse" visible={visible}>
             <CNavbarNav className="me-auto mb-2 mb-lg-0">
               <CNavItem>
-                <CNavLink className="font-fam" href="#">
+                <CNavLink className="font-fam" href="https://www.github.com">
                   Github
                 </CNavLink>
               </CNavItem>

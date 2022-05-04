@@ -13,6 +13,9 @@ export default function App() {
   const [ready, setReady] = useState(false)
   const store = { clicked, setClicked, ready, setReady }
   const scrollRef = useRef()
+  useEffect(() => {
+    console.log('innerwidth: ', window.innerWidth)
+  })
 
   return (
     <>
