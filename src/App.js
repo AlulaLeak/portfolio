@@ -1,31 +1,46 @@
-import { Canvas } from '@react-three/fiber'
-import { MeshReflectorMaterial, Environment } from '@react-three/drei'
+import { useEffect, useRef, useState } from 'react'
+import { Canvas, useThree } from '@react-three/fiber'
+import { Environment, Stars } from '@react-three/drei'
 import Frames from './Frames'
+import VideoText from './VideoText'
+import ScrollingSummary from './ScrollingSummary'
+import ScrollingSummaryMobileUp from './ScrollingSummaryMobileUp'
+import Titles from './Titles'
+import Navbar from './Navbar'
 
-export default function App({ images }) {
+export default function App() {
+  const [clicked, setClicked] = useState(false)
+  const [ready, setReady] = useState(false)
+  const store = { clicked, setClicked, ready, setReady }
+  const scrollRef = useRef()
+
   return (
-    <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
-      <color attach="background" args={['#191920']} />
-      <fog attach="fog" args={['#191920', 0, 15]} />
-      <Environment preset="city" />
-      <group position={[0, -0.5, 0]}>
-        <Frames images={images} />
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-          <planeGeometry args={[50, 50]} />
-          <MeshReflectorMaterial
-            blur={[300, 100]}
-            resolution={2048}
-            mixBlur={1}
-            mixStrength={40}
-            roughness={1}
-            depthScale={1.2}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color="#101010"
-            metalness={0.5}
-          />
-        </mesh>
-      </group>
-    </Canvas>
+    <>
+      {window.innerWidth < 400 && (
+        <>
+          <Navbar />
+          <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
+            <Stars />
+            <ScrollingSummaryMobileUp />
+            <Environment preset="city" />
+          </Canvas>
+        </>
+      )}
+      {window.innerWidth >= 400 && (
+        <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
+          <VideoText {...store} position={[0, -40, 2]} />
+          <Stars />
+          <Titles />
+          <color attach="background" args={['#191920']} />
+          <Environment preset="city" />
+          <group position={[0, -0.5, 0]}>
+            <Frames />
+          </group>
+          <mesh ref={scrollRef}>
+            <ScrollingSummary />
+          </mesh>
+        </Canvas>
+      )}
+    </>
   )
 }
