@@ -3,6 +3,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { Preload, ScrollControls, Scroll, useScroll, Image } from '@react-three/drei'
 import SpheresMobile from './SpheresMobile'
 import Jumbo from './Jumbo'
+import VideoTextMobile from './VideoTextMobile'
 
 function ImagesMobile() {
   const group = useRef()
@@ -28,6 +29,7 @@ export default function ScrollingSummaryMobileUp() {
     <mesh>
       <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
         <Scroll>
+          <VideoTextMobile positionPass={[-0.25, 0, 7]} />
           <ImagesMobile />
         </Scroll>
         <Scroll>

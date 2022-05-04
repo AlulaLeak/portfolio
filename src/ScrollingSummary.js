@@ -32,9 +32,9 @@ function Words() {
   )
 }
 
-export default function ScrollingSummary() {
+export default function ScrollingSummary({ position }) {
   return (
-    <mesh position={[0, 0, 0]}>
+    <mesh position={position}>
       <Suspense fallback={null}>
         <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
           <Scroll>

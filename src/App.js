@@ -24,14 +24,14 @@ export default function App() {
           <Navbar />
           <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
             <Stars />
-            <ScrollingSummaryMobileUp />
+            <ScrollingSummaryMobileUp position={[0, 0, 2]} />
             <Environment preset="city" />
           </Canvas>
         </>
       )}
       {window.innerWidth >= 500 && (
         <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
-          <VideoText {...store} position={[0, -40, 2]} />
+          <VideoText {...store} position={[0, -40, 2]} positionPass={[0, -2.75, -1.5]} />
           <Stars />
           <Titles />
           <color attach="background" args={['#191920']} />
@@ -40,7 +40,7 @@ export default function App() {
             <Frames />
           </group>
           <mesh ref={scrollRef}>
-            <ScrollingSummary />
+            <ScrollingSummary position={[0, 0, 0]} />
           </mesh>
         </Canvas>
       )}
