@@ -7,11 +7,10 @@ import * as THREE from 'three'
 import faceImg from './profile.jpeg'
 
 function ImagesMobile() {
-  const group = useRef()
   return (
-    <group position={[0, 0, 0]} scale={0.3} ref={group}>
+    <mesh position={[0, 0, 0]} scale={0.3}>
       <SpheresMobile />
-    </group>
+    </mesh>
   )
 }
 
@@ -32,8 +31,7 @@ export default function ScrollingSummaryMobileUp() {
       <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
         <Scroll>
           <ImagesMobile />
-          <mesh>
-            {/* <Circle position={[0, 0, 6]} /> */}
+          <mesh position={[1, 3, -0.5]}>
             <planeBufferGeometry attach="geometry" args={[4, 4]} />
             <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
           </mesh>
