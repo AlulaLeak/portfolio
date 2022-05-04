@@ -17,7 +17,7 @@ function ImagesMobile() {
 function Words() {
   return (
     <group position={[-1, 0, 0]} scale={1}>
-      <h1>Hi</h1>
+      <h1></h1>
     </group>
   )
 }
@@ -42,7 +42,7 @@ export default function ScrollingSummaryMobileUp() {
         </Scroll>
         <mesh>
           <Scroll html>
-            <div>hi</div>
+            <div></div>
           </Scroll>
         </mesh>
       </ScrollControls>
