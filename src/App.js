@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <>
-      {window.innerWidth < 400 && (
+      {window.innerWidth < 500 && (
         <>
           <Navbar />
           <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
@@ -26,7 +26,7 @@ export default function App() {
           </Canvas>
         </>
       )}
-      {window.innerWidth >= 400 && (
+      {window.innerWidth >= 500 && (
         <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
           <VideoText {...store} position={[0, -40, 2]} />
           <Stars />
