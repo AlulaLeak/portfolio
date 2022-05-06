@@ -7,9 +7,9 @@ export default function Titles() {
   const get = useThree((state) => state.get)
   const { width } = useThree((state) => state.viewport)
   const ref = useRef()
-  useEffect(() => {
-    console.log('viewport: ', get())
-  }, [get()])
+  // useEffect(() => {
+  //   console.log('viewport: ', get())
+  // }, [get()])
 
   return (
     <mesh ref={ref}>
