@@ -31,16 +31,14 @@ export default function ScrollingSummaryMobileUp() {
       <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
         <Scroll>
           <ImagesMobile />
-          <mesh position={[1.5, 3.5, -0.5]}>
-            <planeBufferGeometry attach="geometry" args={[4, 4]} />
-            <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
-          </mesh>
         </Scroll>
         <Scroll>
-          <Jumbo position={[-1.1, 4.1, 10]} word={'ALULA'} shake={0.01} fontScale={28} />
-          <Jumbo position={[-1.1, 3.85, 10]} word={'LEAKEMARIAM'} shake={0.01} fontScale={28} />
-          <Jumbo position={[-1.1, 3.55, 10]} word={'SOFTWARE'} shake={0.01} fontScale={53} />
-          <Jumbo position={[-0.15, 3.55, 10]} word={'DEV'} shake={0.01} fontScale={53} />
+          <mesh position={[-0.5, 0, 0]}>
+            <Jumbo position={[-1.1, 4.1, 10]} word={'ALULA'} shake={0.01} fontScale={28} />
+            <Jumbo position={[-1.1, 3.85, 10]} word={'LEAKEMARIAM'} shake={0.01} fontScale={28} />
+            <Jumbo position={[-1.1, 3.55, 10]} word={'SOFTWARE'} shake={0.01} fontScale={53} />
+            <Jumbo position={[-0.15, 3.55, 10]} word={'DEV'} shake={0.01} fontScale={53} />
+          </mesh>
         </Scroll>
         <mesh>
           <Scroll html>
