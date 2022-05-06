@@ -31,7 +31,7 @@ export default function ScrollingSummaryMobileUp() {
       <ScrollControls infinite={false} damping={2} distance={1} pages={2.4}>
         <Scroll>
           <ImagesMobile />
-          <mesh position={[1, 3, -0.5]}>
+          <mesh position={[1.5, 3.5, -0.5]}>
             <planeBufferGeometry attach="geometry" args={[4, 4]} />
             <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
           </mesh>
