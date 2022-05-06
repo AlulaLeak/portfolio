@@ -31,7 +31,7 @@ export default function Text({ fontScale, children, vAlign = 'center', hAlign = 
     mesh.current.position.y = vAlign === 'center' ? -size.y / 2 : vAlign === 'top' ? 0 : -size.y
   }, [children])
   return (
-    <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
+    <group {...props} scale={[0.12 * size, 0.12 * size, 0.12]}>
       <mesh ref={mesh}>
         <textGeometry args={[children, config]} />
         <meshNormalMaterial />
